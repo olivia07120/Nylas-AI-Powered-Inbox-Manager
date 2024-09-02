@@ -1,0 +1,277 @@
+/* Dashboard container */
+.dashboard-page {
+    padding: 20px;
+    background: linear-gradient(135deg, #d4b1ff 0%, #b69de0 100%);
+    color: white;
+    min-height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Header */
+.dashboard-page h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #4b0082; /* Dark purple color */
+}
+
+/* Emails by date container */
+.email-group {
+    margin-bottom: 30px; /* Space between different date sections */
+}
+
+/* Date heading */
+.date-heading {
+    font-size: 1.5rem;
+    color: #4b0082; /* Dark purple color */
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Container for each date's emails */
+.emails-by-date {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    padding-left: 20px;  /* Space from the left edge */
+    padding-right: 20px; /* Space from the right edge */
+    scrollbar-width: none; /* Hide scrollbar */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+/* Hide scrollbar for Webkit browsers */
+.emails-by-date::-webkit-scrollbar {
+    display: none;
+}
+
+/* Email tile */
+.email-tile {
+    border-radius: 10px;
+    padding: 15px;
+    margin-right: 20px;
+    width: 350px; /* Increased width for all email tiles */
+    transition: background-color 0.3s ease-in-out;
+    flex-shrink: 0; /* Prevent shrinking */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Email tile for read emails */
+.email-tile.read {
+    background-color: #f5f5f5; /* Light off-white background */
+    color: #000000; /* Black text */
+    border: 2px solid #4a148c; /* Dark purple border */
+}
+
+/* Email tile for unread emails */
+.email-tile.unread {
+    background-color: #7b1fa2; /* Darker purple */
+    color: white;
+}
+
+/* Email category for read emails */
+.email-category.read {
+    text-align: center;
+    background-color: blue; /* Blue background for read emails */
+    color: white; /* White text */
+    padding: 5px 0;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Email category for unread emails */
+.email-category.unread {
+    text-align: center;
+    background-color: #d4b1ff; /* Light purple background for unread emails */
+    color: #4b0082; /* Dark purple text */
+    padding: 5px 0;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Recommended Action styles based on email status */
+.email-action.read.reply {
+    background-color: green;
+    color: white;
+}
+
+.email-action.read.delete {
+    background-color: red;
+    color: white;
+}
+
+.email-action.read.archive {
+    background-color: yellow;
+    color: black;
+}
+
+.email-action.read {
+    background-color: black;
+    color: white;
+}
+
+.email-action.unread.reply {
+    background-color: white;
+    color: green;
+}
+
+.email-action.unread.delete {
+    background-color: white;
+    color: red;
+}
+
+.email-action.unread.archive {
+    background-color: white;
+    color: yellow;
+}
+
+.email-action.unread {
+    background-color: #d4b1ff; /* Light purple */
+    color: #4b0082; /* Dark purple */
+}
+
+/* Button styles */
+.smart-reply-btn {
+    margin: 10px 0;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.see-full-email-btn {
+    margin: 10px 0;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Adjustments for placement */
+.email-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: auto; /* Push buttons to the bottom */
+}
+
+/* Category and action placement fix */
+.email-category {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.email-action {
+    display: block;
+    margin-top: 5px;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Modal content updates */
+.modal-content {
+    width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.email-body {
+    margin-top: 20px;
+    white-space: pre-wrap;
+}
+
+/* Modal styling */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+/* Modal styling */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Subtle darker overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #f7f7f7; /* Light grey for a neutral background */
+    padding: 30px;
+    border-radius: 12px;
+    width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    font-family: 'Open Sans', sans-serif;
+    color: #333333; /* Dark text for readability */
+    border: 2px solid #cccccc; /* Light border for better definition */
+}
+
+.modal-content h4 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #004d7a; /* Muted blue for the header */
+}
+
+.modal-content p.email-from {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #555555; /* Slightly lighter grey for subtext */
+}
+
+.modal-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555555; /* Consistent text color for readability */
+}
+
+.sample-reply {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e8f4f8; /* Light teal background for sample reply section */
+    border-radius: 8px;
+    font-style: italic;
+    color: #004d7a; /* Matching header color */
+    border: 1px solid #cccccc; /* Light border around the sample reply area */
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between; /* Distribute buttons to the corners */
+    margin-top: 20px;
+}
+
+.close-btn, .send-btn {
+    background-color: #0077b6; /* Teal blue for buttons */
+    border: 2px solid #005f8a; /* Border to give a more defined look */
+    padding: 10px 20px;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 45%; /* Ensure the buttons are consistent in size */
+}
+
+.close-btn:hover, .send-btn:hover {
+    background-color: #005f8a; /* Darker shade of blue on hover */
+}
