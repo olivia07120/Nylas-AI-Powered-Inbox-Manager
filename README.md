@@ -74,6 +74,9 @@ Multimodal Inbox Manager is a web application that allows users to manage their 
 ```
 - Open your browser and go to http://localhost:3000 to see the app in action.
 
+## Architecture
+![diagram-export-9-2-2024-2_57_07-AM](https://github.com/user-attachments/assets/b075d9e7-2b5b-45a8-b89f-f49fbc431a81)
+
 
 
 
